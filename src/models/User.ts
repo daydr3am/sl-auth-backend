@@ -5,10 +5,12 @@ import { sequelize } from "../config/database";
 export class User extends Model<InferAttributes<User>, InferCreationAttributes<User>> {
     declare id: number;
     declare uuid: string;
+    declare username: string;
     declare first_name: string;
     declare last_name: string;
-    declare e_mail: string;
+    declare e_mail: string | null;
     declare hashed_password: string;
+    declare salt: string;
 }
 
 User.init({
@@ -20,6 +22,10 @@ User.init({
     uuid: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
+        allowNull: false
+    },
+    username: {
+        type: DataTypes.STRING(128),
         allowNull: false
     },
     first_name: {
@@ -35,6 +41,10 @@ User.init({
         allowNull: true
     },
     hashed_password: {
+        type: DataTypes.STRING(128),
+        allowNull: false
+    },
+    salt: {
         type: DataTypes.STRING(128),
         allowNull: false
     }

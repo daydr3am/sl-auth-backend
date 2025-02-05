@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "express": "^4.21.2",
     "pg": "^8.13.1",
     "pg-hstore": "^2.3.4",
@@ -9,6 +10,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.10",
     "nodemon": "^3.1.9",
@@ -19,6 +21,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/app.ts",
     "compile": "npx tsc"
+  },
+  "imports": {
+    "#models/*": "./models"
   },
   "author": "",
   "license": "ISC",
