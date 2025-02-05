@@ -8,7 +8,7 @@ async function login(username: string, password: string) {
         }
     }).catch((reason) => {console.log("Not able to find user with username: %s. Reason: %s", username, reason); return []})
 
-    if (users === null) {
+    if (users.length == 0) {
         return null;
     }
 
