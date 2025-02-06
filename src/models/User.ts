@@ -3,8 +3,8 @@ import { Model, InferAttributes, InferCreationAttributes, DataTypes } from "sequ
 import { sequelize } from "../config/database";
 
 export class User extends Model<InferAttributes<User>, InferCreationAttributes<User>> {
-    declare id: number;
-    declare uuid: string;
+    declare id?: number;
+    declare uuid?: string;
     declare username: string;
     declare first_name: string;
     declare last_name: string;
